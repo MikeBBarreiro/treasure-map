@@ -1,0 +1,20 @@
+extends ../shared/template
+block content
+  #map
+
+  table.table
+    th Name:
+    th Location
+    th Difficulty lvl
+    th Hint
+    th Found?
+    each treasure in treasures
+      tr(data-name=treasure.name, data-lat=treasure.lat, data-lng=treasure.lng)
+        td: a(href='/treasures/#{treasure._id}')= treasure.name
+        td= treasure.Location
+        td= treasure.difficulty
+        td= treasure.hint
+        td= treasure.found
+
+block scripts
+  script(src='/js/user/index.js')

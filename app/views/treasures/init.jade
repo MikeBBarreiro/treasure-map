@@ -1,0 +1,34 @@
+extends ../shared/template
+block content
+  h1 Create Your Quest!
+  .row
+    .col-xs-8
+      #formDiv
+        form(class="form-inline", role="form", method="post", action="/treasures")
+          input#lat(type="hidden", name="lat")
+          input#lng(type="hidden", name="lng")
+          .form-group
+            label.sr-only(for="name") Name
+            input.form-control#name(type="text", name="name", placeholder="Enter name")
+          .form-group
+            label.sr-only(for="location") location
+            input.form-control#location(type="text", name="location", placeholder="Enter Location")
+          .form-group
+            label.sr-only(for="photo") Photo
+            input.form-control(type="url", id="photo", placeholder="URL")
+          .form-group
+            //Make sure the for=diff is matched with t.diff in the models file, same for the name=diff
+            label.sr-only(for="diff")  Difficulty
+            select(name='diff')
+              option Easy
+              option Medium
+              option Hard
+          .form-group
+            label.sr-only(for="hint") Hint
+            textarea(name="hint")
+          button(type="submit", class="btn btn-default") Add Treasure Quest!
+      .col-xs-4
+
+
+block scripts
+  script(src='/js/user/new-treasure.js')
