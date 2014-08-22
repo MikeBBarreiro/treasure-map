@@ -2,7 +2,7 @@ extends ../shared/template
 block content
   h1 Create Your Quest!
   .row
-    .col-xs-8
+    .col-xs-6
       #formDiv
         form(class="form-inline", role="form", method="post", action="/treasures")
           input#lat(type="hidden", name="lat")
@@ -27,7 +27,7 @@ block content
             label.sr-only(for="hint") Hint
             textarea(name="hint")
           button(type="submit", class="btn btn-default") Add Treasure Quest!
-      .col-xs-4
+      .col-xs-6
 
 
 block scripts

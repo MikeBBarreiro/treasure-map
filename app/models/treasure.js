@@ -40,7 +40,7 @@ Treasure.save = function(cb){
 };
 
 Treasure.prototype.toggle = function(cb){
-  this.found = true;
+  this.found = 'Found It!';
   Treasure.collection.save(this, cb);
 };
 

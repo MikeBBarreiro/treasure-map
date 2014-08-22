@@ -14,7 +14,7 @@ block content
         td= treasure.Location
         td= treasure.difficulty
         td= treasure.hint
-        td= treasure.found
+        td.tableData: img(src= treasure.found ? '/img/lock-closed-icon.png' : '/img/check.png')
 
 block scripts
   script(src='/js/user/index.js')
